@@ -1,22 +1,15 @@
 # 🔥 Assignment_MAPIA(with NestJS)
 
-🎼 wanted x wecode 프리온보딩 백엔드 코스 - [Assignment 2] 마피아컴퍼니
-
-[마피아컴퍼니 사이트](http://www.mapiacompany.com/)<br/>
-[wanted 채용공고 사이트](https://www.wanted.co.kr/company/6137)
+이 Read.me에는 제가 무엇을 했는지만 적혀있습니다. 팀 전체가 무엇을 했는지 궁금하시다면 하단의 링크를 참조해주세요.    
+[Assignment_2_MAPIA 팀 Repository](https://github.com/preOnboarding-Team13/Assignment_2_MAPIA)
 
 <br/>
 
-## ☄️ 팀원 소개
+<br/>
 
-| 이름                                     | 담당 기능                                 |
-| ---------------------------------------- | ----------------------------------------- |
-| [김바다](https://github.com/sally0226)   | REST API 구현, Graphql API 구현           |
-| [김효민](https://github.com/luckyhyom)   | Neo4j 설정, REST API 구현, e2e 테스트구현 |
-| [원동균](https://github.com/WonDongGyun) | Graphql 설정, Graphql API 구현, Graphql unit 테스트구현|
-| [이나영](https://github.com/bokiri409)   | REST API 구현, Graphql API 구현           |
-| [장희진](https://github.com/heejin99)    | REST API 구현, Graphql API 구현           |
-| [조재복](https://github.com/ildang100)   | REST API 구현, e2e 테스트구현             |
+## 🍭 TIL 블로그 주소
+
+- 원동균 : [티스토리 블로그](https://tristy.tistory.com/44)
 
 <br/>
 
@@ -204,7 +197,7 @@ neo4j 폴더: neo4j 설정 및 연결 관련 폴더
 
 ## 🔗 구현 기능
 
-### 1) Check List
+### Check List
 
 
 - **화면별 Read API 요구사항 (GraphQL)**
@@ -258,9 +251,12 @@ neo4j 폴더: neo4j 설정 및 연결 관련 폴더
   
   🔺 Unit Test - Domain
 
-### 2) 상세 내용
+<br/>
 
-#### Neo4j aruaDB 이용
+🧪 내가 이번 프로젝트에서 무엇을 했지?
+-----------------  
+
+<!-- #### Neo4j aruaDB 이용
 
 개발시에 팀원들이 모두 같은 DB를 이용하고, 배포시에도 편리하도록 local DBMS가 아닌 클라우드 형태의 Neo4j aruaDB 를 이용했습니다. 
 
@@ -272,28 +268,44 @@ neo4j 폴더: neo4j 설정 및 연결 관련 폴더
 
 Node 생성시에 apoc.create.uuid() 로 id값을 생성해서 넣어주었습니다.
 
-그래서 Node를 id로 식별하도록 했습니다.
+그래서 Node를 id로 식별하도록 했습니다. -->
 
-#### GraphQL 관련 
+**1) `GraphQL` 환경설정**
 
+이번 프로젝트는 다른 프로젝트와는 다르게 Read 부분만을 GraphQL을 사용한 Rest API + GraphQL API 를 만드는 과제였습니다. 저는 팀에서 유일하게 GraphQL을 다뤄본 경험이 있어서 GraphQL 환경 설정을 맡게 되었습니다. GraphQL을 설정하는 방식에는 2가지 방식이 있는데, 하나는 `code first 방식`, 다른 하나는 `schema first 방식` 입니다. 저는 graphql의 `autoSchemaFile: true` 옵션을 사용하여 자동으로 graphql schema file을 만드는 `code first 방식`이 아닌, 사용자가 직접 작성하는 `schema first 방식`을 사용하였습니다. 
 
-***1. schema first 방식 사용***
+<br/>
 
-graphql의 `autoSchemaFile: true` 옵션을 사용하여 자동으로 graphql schema file을 만드는 `code first 방식`이 아닌, 사용자가 직접 작성하는 `schema first 방식`을 사용하였습니다.
-`schema first 방식`은 사용자가 직접 graphql schema file을 작성해야 해서 반드시 SDL(Schema Definition Language)과 Resolver가 정확히 일치해야 하고, 코드가 실행되어야 오류를 알 수 있다는 단점이 있습니다.     
+`schema first 방식`은 사용자가 직접 graphql schema file을 작성해야 해서 반드시 SDL(Schema Definition Language)과 Resolver가 정확히 일치해야 하고, 코드가 실행되어야 오류를 알 수 있다는 단점이 있습니다. 하지만 graphql schema를 먼저 정의하고 해당 정의에 맞게 코드를 작성하는 방식이라 코드가 전부 작성된 이후 graphql schema file이 정의되는 `code first 방식`에 비해 기술에 익숙하지 않은 사람이 이해하기 쉬우며 schema model을 만들면서 팀원간 의사소통의 수단으로 삼을 수 있다는 장점이 있습니다.      
 
-하지만 graphql schema를 먼저 정의하고 해당 정의에 맞게 코드를 작성하는 방식이라 코드가 전부 작성된 이후 graphql schema file이 정의되는 `code first 방식`에 비해 기술에 익숙하지 않은 사람이 이해하기 쉬우며 schema model을 만들면서 팀원간 의사소통의 수단으로 삼을 수 있다는 장점이 있습니다.      
+<br/>
 
 graphql 기술을 다뤄본 사람과 다뤄보지 못한 사람이 섞여서 한 팀을 이룬 경우 최고의 방법이라고 생각하여 `schema firt 방식`을 사용하였습니다.    
 
+<br/>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/52685665/140557963-fa46aa62-b1b0-4739-bedd-ecd156e7aef1.png"></p>
 
 <br/>
 <br/>
 
+**2) `GraphQL API` 를 만들고, Unit Test 진행**
 
-***2. Data loader***
+graphQL의 Resolver는 Query, Mutation 등의 타입이 어떤 작업을 할 것인지 정의하는 부분입니다. 저는 Resolver를 album, musician, song에따라 다른 Resolver를 만들어서 각각의 Read GraphQL API를 만들었습니다. 이때 각각의 Reolver에서 read service에 있는 서비스를 사용하게 끔 구현했는데 이제와서 보니 해당 서비스 들도 Resolver를 나눈것처럼 나눴어야 했을 것 같습니다. 하나의 Service에다가 몰아 넣으니 눈에 잘 안들어오네요. 
+
+<p align="center"><img src="https://user-images.githubusercontent.com/52685665/144422226-430f8a7d-d6f0-47ad-a415-e285b64b0784.png"></p>
+
+<br/>
+
+각 Resolver와 서비스는 Jest를 사용해서 Unit Test를 진행하였습니다. 테스트 코드 작성은 Given-When-Then 패턴을 따라 작성하였습니다. Given-When-Then 패턴은 Test Code 스타일을 표현하는 방식으로 Given에는 테스트의 상태를 설정하고 When에는 테스트를 진행할 행동, Then에는 테스트의 결과를 예측합니다. 이렇게 작성하면 가독성을 챙길 수 있어서 다른 팀원이 볼 때 어떤 테스트를 진행했는지 쉽게 알 수 있습니다.
+
+<br/>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/52685665/144422987-6ce32ef4-fd35-423d-ad73-d688e3f1247d.png"></p>
+
+<br/>
+
+***3) Data loader 적용해보기***
 
 graphql도 Rest API처럼 N + 1 문제를 가지고 있습니다. Musician과 연관된 Song을 가져오기 위해 다음과 같은 ResolverField를 사용해보겠습니다.  
 
@@ -379,15 +391,7 @@ Property 'intercept' in type 'DataLoaderInterceptor' is not assignable to the sa
 ```
 
 
-#### End to end test
-
-각 도메인에 들어오는 Request의 유효성 검사를 위해 컨트롤러 유닛테스트를 해야하지만
-현재 NestJS 프로젝트에서는 컨트롤러에 들어오기 전에 pipe라는 미들웨어를 통해 유효성 검사를 하기때문에
-e2e 테스트로 각 도메인에 대한 유효성 검사 테스트 코드를 작성했습니다.
-
-[유효성 검사는 e2e 테스트를 통해서..](https://stackoverflow.com/questions/58843038/how-to-manually-test-input-validation-with-nestjs-and-class-validator)
-
-
+<br/>
 <br/>
 
 ## 🐾 API 
@@ -433,17 +437,5 @@ e2e 테스트로 각 도메인에 대한 유효성 검사 테스트 코드를 �
 ![image](https://user-images.githubusercontent.com/41619081/140576422-3db6d354-4b58-4c2c-8e34-7d7da28a08d6.png)
 
 
-
-<br/>
-
-
-## 🍭 TIL 블로그 주소
-
-- 김바다 : [티스토리 블로그](https://bba-dda.tistory.com/107)
-- 김효민 : [티스토리 블로그](https://baejjang.tistory.com/5)
-- 원동균 : [티스토리 블로그](https://tristy.tistory.com/44)
-- 이나영 :
-- 장희진 :  [깃허브 블로그](https://heejin99.github.io/preonboarding/Pre-Onboarding-%EA%B8%B0%EC%97%85%EA%B3%BC%EC%A0%9C-%EB%A7%88%ED%94%BC%EC%95%84-%EC%BB%B4%ED%8D%BC%EB%8B%88/)
-- 조재복 : 
 
 <br/>
